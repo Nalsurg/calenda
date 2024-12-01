@@ -10,9 +10,6 @@ from .models import Event
 def calendar_view(request):
     return render(request, 'schedule.html')
 
-def eventis(request):
-    return render(request, 'eventis.html')
-
 @csrf_exempt
 def events(request):
     if request.method == 'GET':
