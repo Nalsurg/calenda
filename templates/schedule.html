@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         events: function(fetchInfo, successCallback, failureCallback) {
             // Запрашиваем существующие события с сервера
-            fetch('/events/')
+            fetch(`/events/?start=${fetchInfo.start.toISOString()}&end=${fetchInfo.end.toISOString()}`)
                 .then(response => response.json())
                 .then(data => {
                     // Добавляем события в локальный массив
